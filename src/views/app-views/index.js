@@ -10,11 +10,11 @@ export const AppViews = () => {
     <Suspense fallback={<Loading cover="content"/>}>
       <Switch>
         <Route path={`${APP_PREFIX_PATH}/home`} component={lazy(() => import(`./home`))} />
-        {/* <Route path={`${APP_PREFIX_PATH}/clients-list`} component={lazy(() => import(`./clients-list`))}/> */}
+        
         <Route exact path={`${APP_PREFIX_PATH}/clients-list`}>
           <ClientList/>
         </Route>
-        {/* <Route path={`${APP_PREFIX_PATH}/clients/*`} component={lazy(() => import(`./client-profile`))}/> */}
+        
         <Route path={`${APP_PREFIX_PATH}/clients-list/:clientId`} >
           <ClientProfile/>
         </Route>
